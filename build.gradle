@@ -4,14 +4,14 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.2'
+        classpath 'com.android.tools.build:gradle:4.1.1'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     }
 }
 
 allprojects {
     group = 'org.mapsforge'
-    version = 'master-SNAPSHOT'
+    version = 'GingerMap-SNAPSHOT'
     ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 
     ext.androidBuildVersionTools = "30.0.2"
@@ -28,12 +28,12 @@ allprojects {
     }
 }
 
-static def androidCompileSdk() { return 30 }
+static def androidCompileSdk() { return 25 }
 
 // 14 for Support Library, 16 for sqlite-android
-static def androidMinSdk() { return 16 }
+static def androidMinSdk() { return 10 }
 
-static def androidTargetSdk() { return 30 }
+static def androidTargetSdk() { return 25 }
 
 static def versionCode() { return 1 }
 

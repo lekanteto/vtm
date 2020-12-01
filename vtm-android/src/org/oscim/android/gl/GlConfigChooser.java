@@ -63,7 +63,7 @@ public class GlConfigChooser implements GLSurfaceView.EGLConfigChooser {
         // configurations are considered to be "better" and returned first.
         // You need to explicitly filter the data returned by eglChooseConfig!
 
-        EGLConfig config = configs.length > 0 ? configs[0] : null;
+        EGLConfig config = configs.length > 0 ? configs[configs.length-1] : null;
         if (config == null) {
             throw new IllegalArgumentException("No config chosen");
         }
