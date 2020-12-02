@@ -2,25 +2,9 @@ apply plugin: 'com.android.application'
 
 dependencies {
     implementation project(':vtm-android')
-    implementation project(':vtm-android-mvt')
     implementation project(':vtm-extras')
-    implementation project(':vtm-http')
-    implementation project(':vtm-jeo')
-    implementation project(':vtm-json')
-    implementation project(':vtm-jts')
-    implementation project(':vtm-mvt')
     implementation project(':vtm-themes')
     implementation "org.slf4j:slf4j-android:$slf4jVersion"
-
-    implementation project(':vtm-android-gdx')
-    implementation project(':vtm-gdx')
-    implementation project(':vtm-gdx-poi3d')
-
-    implementation 'org.mapsforge:mapsforge-poi-android:0.14.0'
-    implementation 'org.mapsforge:sqlite-android:0.14.0:natives-armeabi-v7a'
-    implementation 'org.mapsforge:sqlite-android:0.14.0:natives-arm64-v8a'
-    implementation 'org.mapsforge:sqlite-android:0.14.0:natives-x86'
-    implementation 'org.mapsforge:sqlite-android:0.14.0:natives-x86_64'
 }
 
 android {
@@ -45,12 +29,6 @@ android {
             java.srcDirs = ['src']
             res.srcDirs = ['res']
             assets.srcDirs = ['assets']
-            file("${rootDir}/vtm-android/natives").eachDir() { dir ->
-                jniLibs.srcDirs += "${dir.path}/lib"
-            }
-            file("${rootDir}/vtm-android-gdx/natives").eachDir() { dir ->
-                jniLibs.srcDirs += "${dir.path}/lib"
-            }
         }
         debug.setRoot('build-types/debug')
         release.setRoot('build-types/release')

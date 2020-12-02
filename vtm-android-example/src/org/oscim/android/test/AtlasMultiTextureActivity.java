@@ -19,6 +19,7 @@
 package org.oscim.android.test;
 
 import android.widget.Toast;
+
 import org.oscim.backend.CanvasAdapter;
 import org.oscim.backend.canvas.Bitmap;
 import org.oscim.backend.canvas.Canvas;
